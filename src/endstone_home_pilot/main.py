@@ -19,9 +19,10 @@ check_config()
 config = load_config()
 home_timeout = config[0]
 economy_enabled = config[1]
-min_home_teleport_price = config[2]
-home_teleport_price_multiplier = config[3]
-currency = load_config_eco()
+if economy_enabled == "true":
+    min_home_teleport_price = config[2]
+    home_teleport_price_multiplier = config[3]
+    currency = load_config_eco()
 
 class Main(Plugin):
     api_version = "0.5"
